@@ -93,7 +93,10 @@ public class Level1 {
         employees.stream().filter(
 				employee -> employee.getName().startsWith("m")
 		).forEach(
-				employee -> employee.setSalary(employee.getSalary() + 200)
+				employee -> {
+					employee.setSalary(employee.getSalary() + 200);
+					System.out.println(employee);
+				}
 		);
 
     }
