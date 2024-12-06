@@ -13,7 +13,7 @@ public class Level1 {
         /* TO DO 1: Afficher tous les employ�s */
 		System.out.println("TO DO 1: Afficher tous les employ�s");
         employees.stream().forEach(
-                employee -> System.out.println(employee)
+                System.out::println
         );
 
         /*
@@ -23,7 +23,7 @@ public class Level1 {
         employees.stream().filter(
                 employee -> employee.getName().startsWith("n")
         ).forEach(
-                employee -> System.out.println(employee)
+				System.out::println
         );
 
         /*
@@ -39,7 +39,7 @@ public class Level1 {
                         employee -> employee.getSalary() > 1000
                 )
                 .forEach(
-                        employee -> System.out.println(employee)
+						System.out::println
                 );
 
         /*
@@ -52,10 +52,10 @@ public class Level1 {
 						employee -> employee.getName().startsWith("s")
 				)
 				.sorted(
-						Comparator.comparingInt(Employee::getSalary)
+						(employee1, employee2) -> employee1.getSalary() - employee2.getSalary()
 				)
 				.forEach(
-						employee -> System.out.println(employee)
+						System.out::println
 				);
 
         /*
@@ -82,7 +82,7 @@ public class Level1 {
 						Employee::getName
 				)
                 .forEach(
-						System.out::println
+						employee -> System.out.println(employee)
 				);
 
         /*
