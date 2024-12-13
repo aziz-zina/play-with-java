@@ -9,8 +9,8 @@ import edu.esprit.game.utils.Data;
 
 public class Level3 {
 	public static void main(String[] args) {
-	List<Employee> employees = Data.employees();
-		
+		List<Employee> employees = Data.employees();
+
 
 //	/* TO DO 1: Retourner une chaine de caract�re qui contient tous les noms des employ�s */
 //	String names = employees.stream()./* TO DO 1  hint(reduce)*/;
@@ -32,7 +32,7 @@ public class Level3 {
 //
 //	/* TO DO 7: Retourner le  min, max,average, sum,count des salaires */
 //	String s = employees.stream()./* TO DO 7 */
-				
+
 
 	}
 }

@@ -27,12 +27,15 @@ public class Level2 {
 		System.out.println(sum);
 
 	/* TO DO 3: Retourner la moyenne des salaires des employ�s dont le nom commence avec s */
-//	double average = employees.stream()
-//			.filter(
-//					employee -> employee.getName().startsWith("s")
-//			)
-//			.mapToDouble(Employee::getSalary)
-//			.average();
+	double average = employees.stream()
+			.filter(
+					employee -> employee.getName().startsWith("s")
+			)
+			.mapToDouble(Employee::getSalary)
+			.average()
+			.getAsDouble();
+		System.out.println("TO DO 3: Retourner la moyenne des salaires des employ�s dont le nom commence avec s");
+		System.out.println(average);
 
 
 		/* TO DO 4: Retourner la liste de tous les employ�s  */
@@ -73,14 +76,15 @@ public class Level2 {
 			.filter(
 					employee -> employee.getName().startsWith("s")
 			)
-			.findAny()
-			.ifPresent(System.out::println);
+			.limit(1)
+			.forEach(System.out::println);
 
 	/* TO DO 8: Afficher le second employ� dont le nom commence avec s */
 	employees.stream()
 			.filter(
 					employee -> employee.getName().startsWith("s")
 			)
+			.limit(2)
 			.skip(1)
 			.findFirst()
 			.ifPresent(System.out::println);
