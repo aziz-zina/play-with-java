@@ -16,16 +16,20 @@ public class Level3 {
 
 
 		/* TO DO 1: Retourner une chaine de caract�re qui contient tous les noms des employ�s */
-		String names = employees.stream().reduce("", (name1, name2) -> name1 + name2.getName(), (name1, name2) -> name1 + name2);
+		String names = employees.stream()
+				.map(
+						employee -> employee.getName()
+				)
+				.reduce("", (name1, name2) -> name1 + " " + name2);
 		System.out.println("TO DO 1: Retourner une chaine de caract�re qui contient tous les noms des employ�s");
 		System.out.println(names);
 
 		/* TO DO 2: Retourner une chaine de caract�re qui contient tous les noms des employ�s en majuscule separ�s par # */
 		String namesMajSplit = employees.stream()
 				.map(
-						employee -> employee.getName()+"#"
+						employee -> employee.getName().toUpperCase()
 				)
-				.reduce("", (name1, name2) -> name1 + name2.toUpperCase(), (name1, name2) -> name1 + name2);
+				.reduce("", (name1, name2) -> name1 + "#" + name2);
 		System.out.println("TO DO 2: Retourner une chaine de caract�re qui contient tous les noms des employ�s en majuscule separ�s par #");
 		System.out.println(namesMajSplit);
 
